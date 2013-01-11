@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import unittest
-from rkAuth import authenticate
+from gaeAuth import authenticate
 
 '''
 author: J.A. Simmons V (simmonsj@jasimmonsv.com)
@@ -25,8 +25,7 @@ class verifyUsernameTestCase(unittest.TestCase):
     '''
     def usernameIsValid(self):
         for i in range(len(self.userList)):
-            self.assertTrue(self.a.authUsername(self.userList[i][0]), "Username is not a string")
-            print i
+            self.assertEqual(self.a.authUsername(self.userList[i][0]), self.userList[i][1],"Username is not a string")
 
     '''
     Username > 3 characters AND username < 25 characters
